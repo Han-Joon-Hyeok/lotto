@@ -112,9 +112,11 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
-
 USE_TZ = True
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -122,8 +124,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# settings.py 
-# Heroku: Update database configuration from $DATABASE_URL. 
-import dj_database_url 
+# settings.py
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
